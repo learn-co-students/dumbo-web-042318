@@ -22,7 +22,7 @@ https://goo.gl/forms/2P8iOJYXL4HDWmzy1
   * a reader method for date of birth
   * `#paintings` that returns an array of Painting instances
   * `#make_painting` that takes a title, width, and height. It creates a new Painting instance, and adds it to the Painter's painting collection
-* Create a Painting class.
+* Create a Painting class
   * should initialize with a title, width, and height
   * a reader and writer for title
   * a reader for width and height
