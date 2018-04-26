@@ -1,5 +1,10 @@
 # One to Many Relationships
 
+## Quizzes
+
+https://goo.gl/forms/Pr7om2iBl06fH7Lj1
+https://goo.gl/forms/2P8iOJYXL4HDWmzy1
+
 ## Objectives
 
 * Implement one object to many objects relationship
