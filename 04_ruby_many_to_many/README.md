@@ -36,7 +36,7 @@ class who's responsibility is to encapsulate data
   * a reader method for date of birth
   * `#paintings` that returns an array of Painting instances
   * `#make_painting` that takes a title, width, and height. It creates a new Painting instance, and adds it to the Painter's painting collection -->
-  * `.all` that returns all the Painters created
+  <!-- * `.all` that returns all the Painters created -->
   <!-- * `#galleries` that returns an array of Gallery instances -->
   * `.painters_in_alph_order` puts out a list of painter names in alphabetical order
 * Create a Painting class
@@ -47,9 +47,9 @@ class who's responsibility is to encapsulate data
   * `.all` that returns all the Paintings created
   * `#painter_name` that returns the name of the Painting's Painter -->
 * Create a Gallery class
-  <!-- * should initialize with a name and location
+  * should initialize with a name and location
   * a reader method for location
-  * a reader and writer for name -->
+  * a reader and writer for name
   * `.all` that returns all the Galleries created
   <!-- * `#receive_donation` takes a painting as an argument and adds it to that gallery's inventory -->
   * `#paintings`returns an array of Painting instances in this gallery

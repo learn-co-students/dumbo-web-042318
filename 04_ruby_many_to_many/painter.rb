@@ -3,9 +3,12 @@ class Painter
   attr_accessor :name
   attr_reader :date_of_birth
 
+  ALL = []
+
   def initialize(name, date_of_birth)
     @name = name
     @date_of_birth = date_of_birth
+    ALL << self
   end
 
   def paintings
@@ -25,6 +28,10 @@ class Painter
     self.paintings.collect do |painting|
       painting.gallery
     end.compact.uniq
+  end
+
+  def self.all
+    ALL
   end
 
 end

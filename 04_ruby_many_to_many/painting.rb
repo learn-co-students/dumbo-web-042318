@@ -3,18 +3,18 @@ class Painting
   attr_accessor :title, :painter, :gallery
   attr_reader :width, :height
 
-  @@all = []
+  ALL = []
 
   def initialize(painter, title, width, height)
     @painter = painter
     @title = title
     @width = width
     @height = height
-    @@all << self
+    ALL << self
   end
 
   def self.all
-    @@all
+    ALL
   end
 
   def painter_name
