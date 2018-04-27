@@ -17,8 +17,14 @@ class Painter
 
   def make_painting(title, width, height)
     ## takes a title, width, and height. It creates a new Painting instance, and adds it to the Painter's painting collection
-    new_painting = Painting.new(title, width, height)
-    new_painting.painter = self
+    Painting.new(self,title, width, height)
+  end
+
+  def galleries
+    #returns an array of Gallery instances
+    self.paintings.collect do |painting|
+      painting.gallery
+    end.compact.uniq
   end
 
 end
