@@ -16,16 +16,6 @@
 * Practice with ActiveRecord::Base instance and class methods
 * Perform persistent CRUD actions on one model using ActiveRecord
 
-Explain how ActiveRecord works for non-related models
-Implement one-to-many relationships using ActiveRecord has_many and belongs_to
-Implement many-to-many relationships using ActiveRecord has_many, :through
-Describe the methods that the relationship macros add to a model
-Practice looking up library documentation
-Specifically, looking up documentation for ActiveRecord
-Association Macros
-Migrations
-Rake tasks
-
 ## Process
 
 * Require `activerecord`, `sinatra-activerecord`, and `rake` gems

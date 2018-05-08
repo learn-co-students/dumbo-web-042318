@@ -6,7 +6,6 @@ ActiveRecord::Base.establish_connection(
   database: "db/development.sqlite"
 )
 
-# config.log_level = :debug
-
+ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 require_all 'app'

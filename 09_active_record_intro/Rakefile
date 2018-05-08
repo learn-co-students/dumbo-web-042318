@@ -3,7 +3,14 @@ require 'sinatra/activerecord/rake'
 
 desc "Start our app console"
 task :console do
-  ActiveRecord::Base.logger = Logger.new(STDOUT)
-
   Pry.start
 end
+
+# desc "Greet the user"
+# task :greet do
+#   puts "HI"
+# end
+
+# task(:greet) do
+#   puts "HI"
+# end

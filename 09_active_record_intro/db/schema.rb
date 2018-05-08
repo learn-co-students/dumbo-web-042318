@@ -10,34 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180507175420) do
-
-  create_table "beverage_ingredients", force: :cascade do |t|
-    t.string "name"
-    t.integer "beverage_id"
-    t.integer "ingredient_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20180507142211) do
 
   create_table "beverages", force: :cascade do |t|
     t.string "name"
     t.string "person"
     t.float "price"
     t.boolean "is_cold"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "producer_id"
-  end
-
-  create_table "ingredients", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "producers", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
