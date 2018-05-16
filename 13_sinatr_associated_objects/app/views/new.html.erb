@@ -1,22 +1,19 @@
 <form action="/books" method="post">
   <label for="book-title">Book title</label>
-  <input id="book-title" type="text" name="book[][title]" placeholder="Book title">
-
-  <label for="book-author">Book Author</label>
-  <input id="book-author" type="text" name="book[][author]" placeholder="Book author">
+  <input id="book-title" type="text" name="book[title]" placeholder="Book title">
 
   <label for="book-snippet">Book Snippet</label>
-  <textarea id="book-snippet" name="book[][snippet]"></textarea>
+  <textarea id="book-snippet" name="book[snippet]"></textarea>
 
-  <label for="book-title">Book title</label>
-  <input id="book-title" type="text" name="book[][title]" placeholder="Book title">
+  <label for="book-author">Create an author:</label>
+  <input id="book-author" type="text" name="author">
 
-  <label for="book-author">Book Author</label>
-  <input id="book-author" type="text" name="book[][author]" placeholder="Book author">
-
-  <label for="book-snippet">Book Snippet</label>
-  <textarea id="book-snippet" name="book[][snippet]"></textarea>
-
+  <label for="select-author">Select author:</label>
+  <select name="book[author_id]">
+    <% @authors.each do |author| %>
+      <option value="<%= author.id %>"><%= author.name %></option>
+    <% end %>
+  </select>
 
   <input type="submit">
 </form>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <h1>Authors!</h1>
+    <a href="/authors/new">Create Author</a>
+    <ul>
+      <% @authors.each do |author| %>
+        <li>
+          <a href="/authors/<%= author.id %>">
+            <%= author.name %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+
+  </body>
+</html>
