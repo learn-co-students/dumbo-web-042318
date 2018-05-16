@@ -1,0 +1,41 @@
+<form action="/books/<%= @book.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+  <label for="book-title">Book title</label>
+  <input
+    id="book-title"
+    type="text"
+    name="book[title]"
+    placeholder="Book title"
+    value="<%= @book.title %>"
+  >
+
+  <label for="book-author">Book Author</label>
+  <input
+    id="book-author"
+    type="text"
+    name="book[author]"
+    placeholder="Book author"
+    value="<%= @book.author %>"
+  >
+
+  <label for="book-snippet">Book Snippet</label>
+  <textarea id="book-snippet" name="book[snippet]"><%= @book.snippet %></textarea>
+
+  <input type="submit" value="update the book">
+</form>
+
+<form action="/books/<%= @book.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="remove this book">
+</form>
+
+
+
+
+
+
+
+
+
+<!--  -->
