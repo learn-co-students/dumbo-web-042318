@@ -1,0 +1,48 @@
+<h1>Form to make a new cheese!!!</h1>
+<!-- feels very sinatra-y, right? -->
+
+<!-- <form action="/cheeses" method="post">
+  <input type="hidden" name="authenticity_token">
+  <label for="cheese_name">Name</label>
+  <input id="cheese_name" type="text" name="cheese[name]" placeholder="Enter name">
+  <br>
+  <label for="cheese_age">Age</label>
+  <input id="cheese_age" type="number" name="cheese[age]" placeholder="0">
+  <br>
+  <label for="cheese_color">Color</label>
+  <input id="cheese_color" type="text" name="cheese[color]" placeholder="Enter color">
+  <br>
+  <input type="submit" name="Submit">
+</form> -->
+
+<!-- # <%= form_tag '/cheeses' do %>
+#   <%= label_tag 'cheese_name', 'Cheese Name' %>
+#   <%= text_field_tag 'cheese[name]' %>
+#   <br>
+#
+#   <%= label_tag 'cheese_age', 'Cheese Age' %>
+#   <%= number_field_tag 'cheese[age]', 0, min: 0  %>
+#   <br>
+#
+#   <%= label_tag 'cheese_color', 'Cheese Color' %>
+#   <%= text_field_tag 'cheese[color]' %>
+#   <br>
+#
+#   <%= submit_tag  %>
+# <% end %> -->
+
+<%= form_for @cheese do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+  <br>
+
+  <%= f.label :color %>
+  <%= f.text_field :color %>
+  <br>
+
+  <%= f.submit %>
+<% end %>

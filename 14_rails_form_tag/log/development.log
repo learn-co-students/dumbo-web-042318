@@ -1,0 +1,910 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/arren.alexander/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/arren.alexander/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/arren.alexander/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/arren.alexander/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateCheeses (20180521150946)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/arren.alexander/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "cheeses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "smelliness" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180521150946_create_cheeses.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180521150946"]]
+  ↳ /Users/arren.alexander/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/arren.alexander/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/arren.alexander/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/arren.alexander/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-21 15:11:27.582849"], ["updated_at", "2018-05-21 15:11:27.582849"]]
+  ↳ /Users/arren.alexander/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/arren.alexander/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/arren.alexander/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mCheese Load (1.1ms)[0m  [1m[34mSELECT  "cheeses".* FROM "cheeses" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCheese Create (0.7ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "age", "smelliness", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Gruyere"], ["age", 7], ["smelliness", 2], ["created_at", "2018-05-21 15:12:25.432400"], ["updated_at", "2018-05-21 15:12:25.432400"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2018-05-21 11:25:40 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/arren.alexander/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/arren.alexander/.rvm/gems/ruby-2.3.3/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/arren.alexander/.rvm/gems/ruby-2.3.3/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (7.3ms)
+Completed 200 OK in 125ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cheeses" for 127.0.0.1 at 2018-05-21 11:25:46 -0400
+Processing by CheesesController#index as HTML
+Completed 406 Not Acceptable in 667ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (CheesesController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.0) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.0) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/cheeses" for 127.0.0.1 at 2018-05-21 11:25:50 -0400
+Processing by CheesesController#index as HTML
+Completed 406 Not Acceptable in 543ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (CheesesController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.0) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.0) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/cheeses" for 127.0.0.1 at 2018-05-21 11:26:08 -0400
+Processing by CheesesController#index as HTML
+  Rendering cheeses/index.html.erb within layouts/application
+  Rendered cheeses/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2588ms (Views: 2582.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cheeses" for 127.0.0.1 at 2018-05-21 11:28:22 -0400
+Processing by CheesesController#index as HTML
+  Rendering cheeses/index.html.erb within layouts/application
+  [1m[36mCheese Load (0.3ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses"[0m
+  ↳ app/views/cheeses/index.html.erb:4
+  Rendered cheeses/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 71ms (Views: 61.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/cheeses/1" for 127.0.0.1 at 2018-05-21 11:30:40 -0400
+Processing by CheesesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCheese Load (0.3ms)[0m  [1m[34mSELECT  "cheeses".* FROM "cheeses" WHERE "cheeses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cheeses_controller.rb:15
+Completed 406 Not Acceptable in 40105ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionController::UnknownFormat (CheesesController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.0) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.0) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/cheeses" for 127.0.0.1 at 2018-05-21 11:31:25 -0400
+Processing by CheesesController#index as HTML
+  Rendering cheeses/index.html.erb within layouts/application
+  [1m[36mCheese Load (0.3ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses"[0m
+  ↳ app/views/cheeses/index.html.erb:4
+  Rendered cheeses/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 86ms (Views: 79.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cheeses/1" for 127.0.0.1 at 2018-05-21 11:34:04 -0400
+Processing by CheesesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCheese Load (0.6ms)[0m  [1m[34mSELECT  "cheeses".* FROM "cheeses" WHERE "cheeses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cheeses_controller.rb:14
+  Rendering cheeses/show.html.erb within layouts/application
+  Rendered cheeses/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 68ms (Views: 43.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 11:39:19 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 225ms (Views: 215.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cheeses" for 127.0.0.1 at 2018-05-21 11:39:57 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/cheeses"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 11:40:39 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 230ms (Views: 209.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cheeses" for 127.0.0.1 at 2018-05-21 11:40:45 -0400
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for CheesesController):
+  
+actionpack (5.2.0) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 11:41:12 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 258ms (Views: 237.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cheeses" for 127.0.0.1 at 2018-05-21 11:41:18 -0400
+Processing by CheesesController#create as HTML
+  Parameters: {"cheese"=>{"name"=>"cheddar", "age"=>"0", "smelliness"=>"0"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.0) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.0) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.0) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.0) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.0) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.0) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.0) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 11:42:36 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 78ms (Views: 69.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cheeses" for 127.0.0.1 at 2018-05-21 11:43:05 -0400
+Processing by CheesesController#create as HTML
+  Parameters: {"authenticity_token"=>"fdLDo/5UHPvjyIvkTXEOv7YNYJZrRJxZXof5UbH/gHOEpmCh4N4XAYL7a4o0qFCS94oru/KVrLZ91Sc736FZ/w==", "cheese"=>{"name"=>"cheddar", "age"=>"0", "smelliness"=>"0"}}
+No template found for CheesesController#create, rendering head :no_content
+Completed 204 No Content in 160704ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 11:45:54 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 205ms (Views: 195.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cheeses" for 127.0.0.1 at 2018-05-21 11:46:03 -0400
+Processing by CheesesController#create as HTML
+  Parameters: {"authenticity_token"=>"9Z9fDKUEmETxOmCPnS9xmv2GAT4hP/xIuKogS742eAYM6/wOu46TvpAJgOHk9i+3vAFKE7juzKeb+P4h0Gihig==", "cheese"=>{"name"=>"cheddar", "age"=>"0", "smelliness"=>"0"}}
+No template found for CheesesController#create, rendering head :no_content
+Completed 204 No Content in 208485ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 11:49:35 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 91ms (Views: 82.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cheeses" for 127.0.0.1 at 2018-05-21 11:49:51 -0400
+Processing by CheesesController#create as HTML
+  Parameters: {"authenticity_token"=>"qVD1boaXn5EVjzQs0Lj4s/4/HffdHYhklp32f/vNJqhQJFZsmB2Ua3S81EKpYaaev7hW2kTMuIu1zygVlZP/JA==", "cheese"=>{"name"=>"gouda", "age"=>"9", "smelliness"=>"3"}}
+No template found for CheesesController#create, rendering head :no_content
+Completed 204 No Content in 211028ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 11:53:25 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 99ms (Views: 92.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cheeses" for 127.0.0.1 at 2018-05-21 11:53:32 -0400
+Processing by CheesesController#create as HTML
+  Parameters: {"authenticity_token"=>"q2KirusjTteIwpVsc84vRUGfUQb9Xreqn8ua/AMdaQZSFgGs9alFLenxdQIKF3FoABgaK2SPh0W8mUSWbUOwig==", "cheese"=>{"name"=>"feta", "age"=>"0", "smelliness"=>"3"}}
+Unpermitted parameter: :smelliness
+Unpermitted parameter: :smelliness
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 11:55:27 -0400
+Processing by CheesesController#new as HTML
+No template found for CheesesController#create, rendering head :no_content
+  Rendering cheeses/new.html.erb within layouts/application
+Completed 204 No Content in 115977ms (ActiveRecord: 1.2ms)
+
+
+  Rendered cheeses/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 1053ms (Views: 91.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cheeses" for 127.0.0.1 at 2018-05-21 11:55:40 -0400
+Processing by CheesesController#create as HTML
+  Parameters: {"authenticity_token"=>"dNvHvNRj/jJLKYCgDbjX9Mepy4osnlQBitgclT9jNmONr2S+yun1yCoaYM50YYnZhi6Ap7VPZO6pisL/UT3v7w==", "cheese"=>{"name"=>"camembert", "age"=>"3", "smelliness"=>"8"}}
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cheeses_controller.rb:16
+  [1m[36mCheese Create (10.0ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "age", "smelliness", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "camembert"], ["age", 3], ["smelliness", 8], ["created_at", "2018-05-21 15:55:41.012722"], ["updated_at", "2018-05-21 15:55:41.012722"]]
+  ↳ app/controllers/cheeses_controller.rb:16
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cheeses_controller.rb:16
+Redirected to http://localhost:3000/cheeses/2
+Completed 302 Found in 89ms (ActiveRecord: 29.8ms)
+
+
+Started GET "/cheeses/2" for 127.0.0.1 at 2018-05-21 11:55:41 -0400
+Processing by CheesesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCheese Load (0.5ms)[0m  [1m[34mSELECT  "cheeses".* FROM "cheeses" WHERE "cheeses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cheeses_controller.rb:26
+  Rendering cheeses/show.html.erb within layouts/application
+  Rendered cheeses/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 321ms (Views: 247.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cheeses" for 127.0.0.1 at 2018-05-21 11:56:11 -0400
+Processing by CheesesController#index as HTML
+  Rendering cheeses/index.html.erb within layouts/application
+  [1m[36mCheese Load (0.2ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses"[0m
+  ↳ app/views/cheeses/index.html.erb:4
+  Rendered cheeses/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 63ms (Views: 57.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 11:56:12 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 168ms (Views: 160.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 12:05:24 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 51ms (Views: 45.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 12:06:23 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 50ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 12:06:40 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 61ms (Views: 55.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 12:07:08 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 53ms (Views: 46.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 12:07:28 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 59ms (Views: 49.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 12:08:56 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 54ms (Views: 47.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 12:09:05 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 55ms (Views: 49.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 12:10:18 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 80ms (Views: 72.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 12:12:04 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 58ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 12:12:09 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 90ms (Views: 83.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cheeses" for 127.0.0.1 at 2018-05-21 12:12:58 -0400
+Processing by CheesesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RI0JBHXmuTy3tjp1FBin4jN4iYOEbbqc8H1UwBYcidu9+aoGa2yyxtaF2httwfnPcv/Crh28inPTL4Vw==", "cheese"=>{"name"=>"feta", "age"=>"1", "smelliness"=>"2"}, "commit"=>"Submit yer cheese"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.0) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.0) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.0) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.0) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.0) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.0) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.0) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 12:13:26 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 105ms (Views: 97.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cheeses" for 127.0.0.1 at 2018-05-21 12:13:44 -0400
+Processing by CheesesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kVB59dYBQQxEpBdI51CiC1EDAwiGzq97/p16dWgTzwNoJNr3yItK9iWX9yaeifwmEIRIJR8fn5Tdz6QfBk0Wjw==", "cheese"=>{"name"=>"cream cheese", "age"=>"4", "smelliness"=>"10"}, "commit"=>"Submit yer cheese"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cheeses_controller.rb:16
+  [1m[36mCheese Create (0.8ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "age", "smelliness", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "cream cheese"], ["age", 4], ["smelliness", 10], ["created_at", "2018-05-21 16:13:44.024205"], ["updated_at", "2018-05-21 16:13:44.024205"]]
+  ↳ app/controllers/cheeses_controller.rb:16
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cheeses_controller.rb:16
+Redirected to http://localhost:3000/cheeses/3
+Completed 302 Found in 10ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/cheeses/3" for 127.0.0.1 at 2018-05-21 12:13:44 -0400
+Processing by CheesesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCheese Load (0.3ms)[0m  [1m[34mSELECT  "cheeses".* FROM "cheeses" WHERE "cheeses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/cheeses_controller.rb:26
+  Rendering cheeses/show.html.erb within layouts/application
+  Rendered cheeses/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 117ms (Views: 105.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cheeses" for 127.0.0.1 at 2018-05-21 12:14:04 -0400
+Processing by CheesesController#index as HTML
+  Rendering cheeses/index.html.erb within layouts/application
+  [1m[36mCheese Load (0.2ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses"[0m
+  ↳ app/views/cheeses/index.html.erb:4
+  Rendered cheeses/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 115ms (Views: 107.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 12:14:58 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 232ms (Views: 217.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cheeses" for 127.0.0.1 at 2018-05-21 12:15:09 -0400
+Processing by CheesesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QHLKA8SFvcPhX+oiNo4TwNEQPuK8lEdJqMbm3h+lv/65BmkB2g+2OYBsCkxPV03tkJd1zyVFd6aLlDi0cftmcg==", "cheese"=>{"name"=>"mozzarella", "age"=>"0", "smelliness"=>"1"}, "commit"=>"Submit yer cheese"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cheeses_controller.rb:16
+  [1m[36mCheese Create (0.6ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "age", "smelliness", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "mozzarella"], ["age", 0], ["smelliness", 1], ["created_at", "2018-05-21 16:15:09.315911"], ["updated_at", "2018-05-21 16:15:09.315911"]]
+  ↳ app/controllers/cheeses_controller.rb:16
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cheeses_controller.rb:16
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"cheeses"}, missing required keys: [:id]):
+  
+app/controllers/cheeses_controller.rb:17:in `create'
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 12:16:55 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 319ms (Views: 303.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cheeses" for 127.0.0.1 at 2018-05-21 12:17:10 -0400
+Processing by CheesesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hqnwEGx+NYDD2q9yp9MNjq+coN4yw2ezxWw2ksTRng5/3VMScvQ+eqLpTxzeClOj7hvr86sSV1zmPuj4qo9Hgg==", "cheese"=>{"name"=>"swiss", "age"=>"10", "smelliness"=>"9"}, "commit"=>"Submit yer cheese"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cheeses_controller.rb:16
+  [1m[36mCheese Create (0.8ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "age", "smelliness", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "swiss"], ["age", 10], ["smelliness", 9], ["created_at", "2018-05-21 16:17:10.661853"], ["updated_at", "2018-05-21 16:17:10.661853"]]
+  ↳ app/controllers/cheeses_controller.rb:16
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cheeses_controller.rb:16
+Redirected to http://localhost:3000/cheeses/5
+Completed 302 Found in 31ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/cheeses/5" for 127.0.0.1 at 2018-05-21 12:17:10 -0400
+Processing by CheesesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCheese Load (0.6ms)[0m  [1m[34mSELECT  "cheeses".* FROM "cheeses" WHERE "cheeses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cheeses_controller.rb:26
+  Rendering cheeses/show.html.erb within layouts/application
+  Rendered cheeses/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 193ms (Views: 182.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 12:17:50 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 346ms (Views: 304.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cheeses" for 127.0.0.1 at 2018-05-21 12:18:00 -0400
+Processing by CheesesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DLQBLe+Z53ax5lo9zVIn7Ay+xie0A33nvENuIpjtCrr1wKIv8RPsjNDVulO0i3nBTTmNCi3STQifEbBI9rPTNg==", "cheese"=>{"name"=>"gorgonzola", "age"=>"199", "smelliness"=>"10"}, "commit"=>"Submit yer cheese"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cheeses_controller.rb:17
+  [1m[36mCheese Create (0.7ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "age", "smelliness", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "gorgonzola"], ["age", 199], ["smelliness", 10], ["created_at", "2018-05-21 16:18:00.592124"], ["updated_at", "2018-05-21 16:18:00.592124"]]
+  ↳ app/controllers/cheeses_controller.rb:17
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cheeses_controller.rb:17
+  [1m[36mCheese Load (0.3ms)[0m  [1m[34mSELECT  "cheeses".* FROM "cheeses" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/arren.alexander/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+Redirected to 
+  [1m[36mCACHE Cheese Load (0.0ms)[0m  [1m[34mSELECT  "cheeses".* FROM "cheeses" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/arren.alexander/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 5.4ms)
+
+
+  
+  [1m[36mCACHE Cheese Load (0.1ms)[0m  [1m[34mSELECT  "cheeses".* FROM "cheeses" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/arren.alexander/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+NoMethodError (undefined method `to_model' for #<Cheese::ActiveRecord_Relation:0x007fdc2d0e8998>
+Did you mean?  to_xml):
+  
+app/controllers/cheeses_controller.rb:18:in `create'
+Started GET "/cheeses/new" for 127.0.0.1 at 2018-05-21 12:21:04 -0400
+Processing by CheesesController#new as HTML
+  Rendering cheeses/new.html.erb within layouts/application
+  Rendered cheeses/new.html.erb within layouts/application (37.4ms)
+Completed 200 OK in 387ms (Views: 377.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cheeses" for 127.0.0.1 at 2018-05-21 12:21:23 -0400
+Processing by CheesesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nGShumSuosY+7s/J3HtA2tRDbDsM1pwvx0TuLmXYrzFlEAK4eiSpPF/dL6eloh73lcQnFpUHrMDkFjBEC4Z2vQ==", "cheese"=>{"name"=>"burrata", "age"=>"0", "smelliness"=>"1"}, "commit"=>"Submit yer cheese"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cheeses_controller.rb:16
+  [1m[36mCheese Create (0.6ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "age", "smelliness", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "burrata"], ["age", 0], ["smelliness", 1], ["created_at", "2018-05-21 16:21:23.323587"], ["updated_at", "2018-05-21 16:21:23.323587"]]
+  ↳ app/controllers/cheeses_controller.rb:16
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cheeses_controller.rb:16
+Redirected to http://localhost:3000/cheeses
+Completed 302 Found in 28ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/cheeses" for 127.0.0.1 at 2018-05-21 12:21:23 -0400
+Processing by CheesesController#index as HTML
+  Rendering cheeses/index.html.erb within layouts/application
+  [1m[36mCheese Load (0.3ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses"[0m
+  ↳ app/views/cheeses/index.html.erb:4
+  Rendered cheeses/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 85ms (Views: 77.1ms | ActiveRecord: 0.3ms)
+
+

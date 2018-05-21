@@ -1,0 +1,50 @@
+<!-- <form action="/cheeses" method="post">
+  <input type="hidden" name="authenticity_token">
+
+  <label for="cheese_name">Name</label>
+  <input id="cheese_name" type="text" name="cheese[name]" placeholder="cool cheese name">
+  <br>
+
+  <label for="cheese_age">Age</label>
+  <input id="cheese_age" type="number" name="cheese[age]">
+  <br>
+
+  <label for="cheese_smelliness">Smelliness</label>
+  <input id="cheese_smelliness" type="number" name="cheese[smelliness]">
+  <br>
+  <input type="submit" value="Submit your cheese">
+</form> -->
+
+<%= form_tag cheeses_path do %>
+  <%= label_tag "cheese_name", 'Cheese Name' %>
+  <%= text_field_tag 'cheese[name]' %>
+  <br>
+
+  <%= label_tag "cheese_age", "Cheese Age" %>
+  <%= number_field_tag 'cheese[age]', 0, min: 0 %>
+  <br>
+
+  <%= label_tag "cheese_smelliness", "Cheese Smelliness" %>
+  <%= number_field_tag 'cheese[smelliness]', 5, min: 0, max: 10 %>
+  <br>
+
+  <%= submit_tag 'Submit yer cheese' %>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->
