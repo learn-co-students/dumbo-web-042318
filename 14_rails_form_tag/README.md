@@ -1,24 +1,13 @@
 # README
+Rails Forms Lecture Deliverables
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Build a CRUD app from scratch
+Focus on Index and New
+Walk through Rails Routes & REST
+Make necessary views
+Learn the differences between HTML forms and Rails form builders
+Talk about URL path path_helpers
+Where to find them
+How to define them
+form_tag
+Rails Documentation
