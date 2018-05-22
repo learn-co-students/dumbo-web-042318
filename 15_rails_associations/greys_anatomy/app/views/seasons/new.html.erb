@@ -1,0 +1,15 @@
+<h1>Create Season</h1>
+<%= form_for @season do |f| %>
+  <%= f.label :number %>
+  <%= f.number_field :number  %>
+  <%= f.collection_check_boxes(:character_ids, @characters, :id, :name) %>
+
+  <!-- add checkboxes -->
+  <%# @characters.each do |char|  %>
+    <%#= check_box_tag 'season[person_ids][]', char.id %>
+    <%# check_box_tag 'season[character_ids][]', char.id %>
+    <%#= label_tag char.name %>
+  <%# end %>
+
+  <%= f.submit %>
+<% end %>
