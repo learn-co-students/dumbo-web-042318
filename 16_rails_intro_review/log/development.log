@@ -1,0 +1,1048 @@
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBrews (20180522122457)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "brews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "blend_name" varchar, "origin" varchar, "notes" varchar, "strength" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180522122457"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-22 18:22:26.660585"], ["updated_at", "2018-05-22 18:22:26.660585"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Split Town"], ["origin", "Cerrado, Brazil"], ["notes", "dirty, watery, smokey, soil, lemon"], ["strength", 3], ["created_at", "2018-05-22 18:22:43.246841"], ["updated_at", "2018-05-22 18:22:43.246841"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "The Captain's Volcano"], ["origin", "Southern Region, Morogoro, Tanzania"], ["notes", "dry, velvety, marzipan, watermelon, hay"], ["strength", 5], ["created_at", "2018-05-22 18:22:43.250857"], ["updated_at", "2018-05-22 18:22:43.250857"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Huggy Light"], ["origin", "Mogiana, Brazil"], ["notes", "bright, silky, lime, black cherry, clementine"], ["strength", 3], ["created_at", "2018-05-22 18:22:43.254437"], ["updated_at", "2018-05-22 18:22:43.254437"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (6.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Captain's Been"], ["origin", "Sul Minas, Brazil"], ["notes", "dull, slick, star fruit, burnt sugar, orange blossom"], ["strength", 3], ["created_at", "2018-05-22 18:22:43.264822"], ["updated_at", "2018-05-22 18:22:43.264822"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Split Pie"], ["origin", "Kayanza, Burundi"], ["notes", "pointed, creamy, mushroom, golden raisin, snow pea"], ["strength", 2], ["created_at", "2018-05-22 18:22:43.268165"], ["updated_at", "2018-05-22 18:22:43.268165"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Postmodern Level"], ["origin", "Jinotega, Nicaragua"], ["notes", "dull, coating, cashew, nutmeg, bittersweet chocolate"], ["strength", 4], ["created_at", "2018-05-22 18:22:43.271901"], ["updated_at", "2018-05-22 18:22:43.271901"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Bluebery Utopia"], ["origin", "Manjarabad, India"], ["notes", "lingering, coating, green apple, black cherry, papaya"], ["strength", 1], ["created_at", "2018-05-22 18:22:43.275237"], ["updated_at", "2018-05-22 18:22:43.275237"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Goodbye Delight"], ["origin", "Coban, Guatemala"], ["notes", "faint, creamy, cacao nibs, nutmeg, jasmine"], ["strength", 2], ["created_at", "2018-05-22 18:22:43.278986"], ["updated_at", "2018-05-22 18:22:43.278986"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Melty Solstice"], ["origin", "Tecapa-Chinameca, El Salvador"], ["notes", "unbalanced, round, graham cracker, red grape, green pepper"], ["strength", 1], ["created_at", "2018-05-22 18:22:43.282257"], ["updated_at", "2018-05-22 18:22:43.282257"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Evening Look"], ["origin", "Coban, Guatemala"], ["notes", "juicy, coating, green-tea, jasmine, musty"], ["strength", 2], ["created_at", "2018-05-22 18:22:43.285615"], ["updated_at", "2018-05-22 18:22:43.285615"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Captain's Solstice"], ["origin", "Hirazi, Yemen"], ["notes", "astringent, juicy, fresh wood, smokey, raisin"], ["strength", 3], ["created_at", "2018-05-22 18:22:43.289497"], ["updated_at", "2018-05-22 18:22:43.289497"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Jacked Breaker"], ["origin", "Mt. Kenya, Kenya"], ["notes", "faint, coating, lime, meyer lemon, rose hips"], ["strength", 5], ["created_at", "2018-05-22 18:22:43.293034"], ["updated_at", "2018-05-22 18:22:43.293034"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Veranda America"], ["origin", "Tapanuli, Sumatra"], ["notes", "sharp, slick, quakery, maple syrup, burnt sugar"], ["strength", 2], ["created_at", "2018-05-22 18:22:43.296777"], ["updated_at", "2018-05-22 18:22:43.296777"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Split Been"], ["origin", "Tecapa-Chinameca, El Salvador"], ["notes", "lingering, tea-like, clove, sugar cane, kiwi"], ["strength", 5], ["created_at", "2018-05-22 18:22:43.300135"], ["updated_at", "2018-05-22 18:22:43.300135"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Goodbye Enlightenment"], ["origin", "Cerrado, Brazil"], ["notes", "dirty, full, milk chocolate, soy sauce, kiwi"], ["strength", 3], ["created_at", "2018-05-22 18:22:43.303433"], ["updated_at", "2018-05-22 18:22:43.303433"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Green Cake"], ["origin", "Antigua, Guatemala"], ["notes", "mild, syrupy, lychee, liquorice, tomato"], ["strength", 2], ["created_at", "2018-05-22 18:22:43.307040"], ["updated_at", "2018-05-22 18:22:43.307040"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Green Nuts"], ["origin", "Kayanza, Burundi"], ["notes", "astringent, chewy, nougat, sage, jasmine"], ["strength", 5], ["created_at", "2018-05-22 18:22:43.310676"], ["updated_at", "2018-05-22 18:22:43.310676"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "The Captain's Bean"], ["origin", "Alotepec-Metapán, El Salvador"], ["notes", "faint, creamy, banana, grapefruit, cola"], ["strength", 4], ["created_at", "2018-05-22 18:22:43.314009"], ["updated_at", "2018-05-22 18:22:43.314009"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Café Breaker"], ["origin", "Tarrazu, Costa Rica"], ["notes", "deep, round, cranberry, mushroom, lavender"], ["strength", 2], ["created_at", "2018-05-22 18:22:43.317289"], ["updated_at", "2018-05-22 18:22:43.317289"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Evening Delight"], ["origin", "Atitlan, Guatemala"], ["notes", "soft, velvety, mandarin, clove, bittersweet chocolate"], ["strength", 2], ["created_at", "2018-05-22 18:22:43.322591"], ["updated_at", "2018-05-22 18:22:43.322591"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Split Symphony"], ["origin", "Kayanza, Burundi"], ["notes", "unbalanced, slick, smokey, coconut, apricot"], ["strength", 1], ["created_at", "2018-05-22 18:22:43.326585"], ["updated_at", "2018-05-22 18:22:43.326585"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "The Utopia"], ["origin", "Sul Minas, Brazil"], ["notes", "bright, coating, brown sugar, rye, concord grape"], ["strength", 5], ["created_at", "2018-05-22 18:22:43.331714"], ["updated_at", "2018-05-22 18:22:43.331714"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "American Select"], ["origin", "Kericho, Kenya"], ["notes", "astringent, tea-like, cashew, nutmeg, granola"], ["strength", 1], ["created_at", "2018-05-22 18:22:43.336137"], ["updated_at", "2018-05-22 18:22:43.336137"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Melty Enlightenment"], ["origin", "Cerrado, Brazil"], ["notes", "soft, tea-like, curry, passion fruit, peanut"], ["strength", 3], ["created_at", "2018-05-22 18:22:43.339921"], ["updated_at", "2018-05-22 18:22:43.339921"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "Street Select"], ["origin", "Jinotega, Nicaragua"], ["notes", "lingering, silky, concord grape, fresh bread, almond"], ["strength", 5], ["created_at", "2018-05-22 18:22:43.343583"], ["updated_at", "2018-05-22 18:22:43.343583"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBrew Load (3.8ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" ORDER BY "brews"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" ORDER BY "brews"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" ORDER BY "brews"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" ORDER BY "brews"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+Started GET "/brews" for 127.0.0.1 at 2018-05-22 14:30:10 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BrewsController#index as HTML
+Completed 406 Not Acceptable in 88ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (BrewsController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.6) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.6) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/brews" for 127.0.0.1 at 2018-05-22 14:36:10 -0400
+Processing by BrewsController#index as HTML
+  Rendering brews/index.html.erb within layouts/application
+  [1m[36mBrew Load (1.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered brews/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 886ms (Views: 878.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/brews/1" for 127.0.0.1 at 2018-05-22 14:41:39 -0400
+Processing by BrewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBrew Load (1.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering brews/show.html.erb within layouts/application
+  Rendered brews/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 79ms (Views: 46.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2018-05-22 14:47:15 -0400
+Processing by BrewsController#new as HTML
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 70ms (Views: 47.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2018-05-22 14:49:08 -0400
+Processing by BrewsController#new as HTML
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (694.1ms)
+Completed 200 OK in 736ms (Views: 731.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2018-05-22 14:51:21 -0400
+Processing by BrewsController#new as HTML
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 43ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2018-05-22 14:52:17 -0400
+Processing by BrewsController#new as HTML
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2018-05-22 14:52:26 -0400
+Processing by BrewsController#new as HTML
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 46ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2018-05-22 14:55:01 -0400
+Processing by BrewsController#new as HTML
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 52ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2018-05-22 14:56:29 -0400
+Processing by BrewsController#new as HTML
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 44ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/brews" for 127.0.0.1 at 2018-05-22 14:58:09 -0400
+Processing by BrewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l23LKqN4JV5mMbS82TDgNipwV03rle+DNW1Xm+MKIQnrVavd4s95zHMCi0fAUSkIi6hELMHEktLnerWVW22YNg==", "brew"=>{"blend_name"=>"new name", "origin"=>"new origin", "notes"=>"asdfqer", "strength"=>"3"}, "commit"=>"Add"}
+No template found for BrewsController#create, rendering head :no_content
+Completed 204 No Content in 359052ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2018-05-22 15:04:14 -0400
+Processing by BrewsController#new as HTML
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 56ms (Views: 41.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/brews" for 127.0.0.1 at 2018-05-22 15:04:20 -0400
+Processing by BrewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ge9WzouDXs1lj0CdP6gP7l1XzrzLOLQIqVdZo4UbClll1zY5yjQCX3C8f2YmycbQ/I/d3eFpyVl7QLutPXyzZg==", "brew"=>{"blend_name"=>"new name", "origin"=>"new origin", "notes"=>"some notes", "strength"=>"2"}, "commit"=>"Add"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "new name"], ["origin", "new origin"], ["notes", "some notes"], ["strength", 2], ["created_at", "2018-05-22 19:04:20.830626"], ["updated_at", "2018-05-22 19:04:20.830626"]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brews/26
+Completed 302 Found in 13ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/brews/26" for 127.0.0.1 at 2018-05-22 15:04:20 -0400
+Processing by BrewsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBrew Load (1.4ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering brews/show.html.erb within layouts/application
+  Rendered brews/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 43ms (Views: 34.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/brews" for 127.0.0.1 at 2018-05-22 15:04:29 -0400
+Processing by BrewsController#index as HTML
+  Rendering brews/index.html.erb within layouts/application
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered brews/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 32ms (Views: 28.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/brews/26/edit" for 127.0.0.1 at 2018-05-22 15:09:22 -0400
+Processing by BrewsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBrew Load (0.1ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering brews/edit.html.erb within layouts/application
+  Rendered brews/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 54ms (Views: 40.2ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/brews/26" for 127.0.0.1 at 2018-05-22 15:15:38 -0400
+Processing by BrewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GFExGt8RxYMmu4yMMC84FLjRJtiMRH/t/c9DKn+34OJkaVHtnqaZETOIs3cpTvEqGQk1uaYVArwv2KEkx9BZ3Q==", "brew"=>{"blend_name"=>"new name", "origin"=>"new origin", "notes"=>"some notes", "strength"=>"2"}, "commit"=>"Update Brew", "id"=>"26"}
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brews/26
+Completed 302 Found in 18ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/brews/26" for 127.0.0.1 at 2018-05-22 15:15:38 -0400
+Processing by BrewsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBrew Load (0.1ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering brews/show.html.erb within layouts/application
+  Rendered brews/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 48ms (Views: 45.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/brews/26/edit" for 127.0.0.1 at 2018-05-22 15:15:45 -0400
+Processing by BrewsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering brews/edit.html.erb within layouts/application
+  Rendered brews/edit.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 38ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/brews/26" for 127.0.0.1 at 2018-05-22 15:15:51 -0400
+Processing by BrewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qy3Nvr6Alnd4Y5MDPoeejdg35mtfHyiOSDjxuskTk/DXFa1J/zfK5W1QrPgn5lezee/1CnVOVd+aLxO0cXQqzw==", "brew"=>{"blend_name"=>"updated name", "origin"=>"new origin", "notes"=>"some notes", "strength"=>"2"}, "commit"=>"Update Brew", "id"=>"26"}
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "brews" SET "blend_name" = ?, "updated_at" = ? WHERE "brews"."id" = ?[0m  [["blend_name", "updated name"], ["updated_at", "2018-05-22 19:15:51.357966"], ["id", 26]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brews/26
+Completed 302 Found in 10ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/brews/26" for 127.0.0.1 at 2018-05-22 15:15:51 -0400
+Processing by BrewsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering brews/show.html.erb within layouts/application
+  Rendered brews/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 22ms (Views: 16.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/brews/26" for 127.0.0.1 at 2018-05-22 15:16:10 -0400
+Processing by BrewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qy3Nvr6Alnd4Y5MDPoeejdg35mtfHyiOSDjxuskTk/DXFa1J/zfK5W1QrPgn5lezee/1CnVOVd+aLxO0cXQqzw==", "brew"=>{"blend_name"=>"updated name with @brews", "origin"=>"new origin", "notes"=>"some notes", "strength"=>"2"}, "commit"=>"Update Brew", "id"=>"26"}
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "brews" SET "blend_name" = ?, "updated_at" = ? WHERE "brews"."id" = ?[0m  [["blend_name", "updated name with @brews"], ["updated_at", "2018-05-22 19:16:10.838538"], ["id", 26]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" LIMIT ?[0m  [["LIMIT", 11]]
+Redirected to 
+  [1m[36mCACHE Brew Load (0.0ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" LIMIT ?[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 4.8ms)
+
+
+  
+  [1m[36mCACHE Brew Load (0.0ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" LIMIT ?[0m  [["LIMIT", 11]]
+NoMethodError (undefined method `to_model' for #<Brew::ActiveRecord_Relation:0x007fc3725d7680>
+Did you mean?  to_xml):
+  
+app/controllers/brews_controller.rb:30:in `update'
+Started PATCH "/brews/26" for 127.0.0.1 at 2018-05-22 15:22:05 -0400
+Processing by BrewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qy3Nvr6Alnd4Y5MDPoeejdg35mtfHyiOSDjxuskTk/DXFa1J/zfK5W1QrPgn5lezee/1CnVOVd+aLxO0cXQqzw==", "brew"=>{"blend_name"=>"updated name with @brews", "origin"=>"new origin", "notes"=>"some notes", "strength"=>"2"}, "commit"=>"Update Brew", "id"=>"26"}
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brews/26
+Completed 302 Found in 28ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/brews/26" for 127.0.0.1 at 2018-05-22 15:22:05 -0400
+Processing by BrewsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBrew Load (0.1ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering brews/show.html.erb within layouts/application
+  Rendered brews/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 52ms (Views: 48.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/brews/26/edit" for 127.0.0.1 at 2018-05-22 15:22:12 -0400
+Processing by BrewsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering brews/edit.html.erb within layouts/application
+  Rendered brews/edit.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 39ms (Views: 35.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/brews/26/edit" for 127.0.0.1 at 2018-05-22 15:24:23 -0400
+Processing by BrewsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering brews/edit.html.erb within layouts/application
+  Rendered brews/edit.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 58ms (Views: 50.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/brews/26/edit?method=delete" for 127.0.0.1 at 2018-05-22 15:24:28 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/brews/26/edit"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PUT "/__web_console/repl_sessions/78e602ef98304602952fab65cc51091c" for 127.0.0.1 at 2018-05-22 15:25:24 -0400
+Started PUT "/__web_console/repl_sessions/78e602ef98304602952fab65cc51091c" for 127.0.0.1 at 2018-05-22 15:25:24 -0400
+Started PUT "/__web_console/repl_sessions/78e602ef98304602952fab65cc51091c" for 127.0.0.1 at 2018-05-22 15:25:31 -0400
+  [1m[36mBrew Load (0.1ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+Started GET "/brews/26/edit" for 127.0.0.1 at 2018-05-22 15:27:12 -0400
+Processing by BrewsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering brews/edit.html.erb within layouts/application
+  Rendered brews/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 53ms (Views: 47.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/brews/26" for 127.0.0.1 at 2018-05-22 15:27:30 -0400
+  
+AbstractController::ActionNotFound (The action 'destroy' could not be found for BrewsController):
+  
+actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/brews/26/edit" for 127.0.0.1 at 2018-05-22 15:27:58 -0400
+Processing by BrewsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBrew Load (0.1ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering brews/edit.html.erb within layouts/application
+  Rendered brews/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 53ms (Views: 38.0ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/brews/26" for 127.0.0.1 at 2018-05-22 15:28:00 -0400
+Processing by BrewsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R8hRix2jGcJVEgmEm9V39iWJLC8idUVjtXJaRBHhPRI78DF8XBRFUEAhNn+CtL7IhFE/TggkODJnZbhKqYaELQ==", "commit"=>"Delete", "id"=>"26"}
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[31mDELETE FROM "brews" WHERE "brews"."id" = ?[0m  [["id", 26]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brews
+Completed 302 Found in 9ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/brews" for 127.0.0.1 at 2018-05-22 15:28:00 -0400
+Processing by BrewsController#index as HTML
+  Rendering brews/index.html.erb within layouts/application
+  [1m[36mBrew Load (0.4ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered brews/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/brews/26" for 127.0.0.1 at 2018-05-22 15:28:05 -0400
+Processing by BrewsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBrew Load (0.1ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Brew with 'id'=26):
+  
+app/controllers/brews_controller.rb:40:in `set_brew'
+Started GET "/brews/25/edit" for 127.0.0.1 at 2018-05-22 15:29:35 -0400
+Processing by BrewsController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mBrew Load (0.4ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  Rendering brews/edit.html.erb within layouts/application
+  Rendered brews/edit.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 49ms (Views: 42.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/brews/25/edit" for 127.0.0.1 at 2018-05-22 15:29:49 -0400
+Processing by BrewsController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mBrew Load (0.4ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  Rendering brews/edit.html.erb within layouts/application
+  Rendered brews/edit.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 45ms (Views: 38.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/brews/25/edit" for 127.0.0.1 at 2018-05-22 15:30:30 -0400
+Processing by BrewsController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mBrew Load (0.1ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  Rendering brews/edit.html.erb within layouts/application
+  Rendered brews/edit.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 32ms (Views: 28.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/brews" for 127.0.0.1 at 2018-05-22 15:32:57 -0400
+Processing by BrewsController#index as HTML
+  Rendering brews/index.html.erb within layouts/application
+  [1m[36mBrew Load (0.7ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered brews/index.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"brews", :id=>nil}, missing required keys: [:id]):
+     6:     <td><%= brew.origin %></td>
+     7:     <td><%= brew.notes %></td>
+     8:     <td><%= brew.strength %></td>
+     9:     <td><%= link_to "Edit", edit_brew_path(@brew) %></td>
+    10:     <td><%= button_to "Delete", brew_path(@brew), method: :delete %></td>
+    11:   </tr>
+    12:   <% end %>
+  
+app/views/brews/index.html.erb:9:in `block in _app_views_brews_index_html_erb__4338324280655160966_70238707266340'
+app/views/brews/index.html.erb:3:in `_app_views_brews_index_html_erb__4338324280655160966_70238707266340'
+Started GET "/brews" for 127.0.0.1 at 2018-05-22 15:33:31 -0400
+Processing by BrewsController#index as HTML
+  Rendering brews/index.html.erb within layouts/application
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered brews/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 51ms (Views: 46.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/brews" for 127.0.0.1 at 2018-05-22 15:34:01 -0400
+Processing by BrewsController#index as HTML
+  Rendering brews/index.html.erb within layouts/application
+  [1m[36mBrew Load (0.4ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered brews/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 52ms (Views: 46.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2018-05-22 15:34:03 -0400
+Processing by BrewsController#new as HTML
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 53ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/strongest" for 127.0.0.1 at 2018-05-22 15:51:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/strongest"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/brews/strongest" for 127.0.0.1 at 2018-05-22 15:51:48 -0400
+Processing by BrewsController#show as HTML
+  Parameters: {"id"=>"strongest"}
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 9ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Brew with 'id'=strongest):
+  
+app/controllers/brews_controller.rb:47:in `set_brew'
+Started GET "/brews/26" for 127.0.0.1 at 2018-05-22 15:52:52 -0400
+Processing by BrewsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+Completed 404 Not Found in 11ms (ActiveRecord: 2.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Brew with 'id'=26):
+  
+app/controllers/brews_controller.rb:47:in `set_brew'
+Started GET "/brews/20" for 127.0.0.1 at 2018-05-22 15:52:56 -0400
+Processing by BrewsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering brews/show.html.erb within layouts/application
+  Rendered brews/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 54ms (Views: 41.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/brews/strongest" for 127.0.0.1 at 2018-05-22 15:53:07 -0400
+Processing by BrewsController#show as HTML
+  Parameters: {"id"=>"strongest"}
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Brew with 'id'=strongest):
+  
+app/controllers/brews_controller.rb:47:in `set_brew'
+Started GET "/brews/strongest" for 127.0.0.1 at 2018-05-22 15:54:43 -0400
+Processing by BrewsController#coolest_action as HTML
+  [1m[36mBrew Load (0.1ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBrew Load (0.5ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" ORDER BY "brews"."strength" ASC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBrew Load (0.7ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" ORDER BY "brews"."strength" DESC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "brews"."strength" FROM "brews" ORDER BY "brews"."strength" DESC[0m
+  [1m[36mBrew Load (0.6ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" ORDER BY "brews"."strength" DESC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendering brews/coolest_action.html.erb within layouts/application
+  Rendered brews/coolest_action.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 400468ms (ActiveRecord: 4.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Strongest</h1>
+    2: 
+    3: <table>
+    4:   <% @brews.each do |brew| %>
+    5:   <tr> <!-- table row -->
+    6:     <td><%= brew.blend_name %></td><!-- table cell -->
+    7:     <td><%= brew.origin %></td>
+  
+app/views/brews/coolest_action.html.erb:4:in `_app_views_brews_coolest_action_html_erb___4039707674995634730_70238644261100'
+Started GET "/brews/strongest" for 127.0.0.1 at 2018-05-22 16:01:32 -0400
+Processing by BrewsController#coolest_action as HTML
+  Rendering brews/coolest_action.html.erb within layouts/application
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" ORDER BY "brews"."strength" DESC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered brews/coolest_action.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 64ms (Views: 55.6ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/brews/12" for 127.0.0.1 at 2018-05-22 16:01:38 -0400
+Processing by BrewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RTBAUjsQcqY5cPff25kx5vtN2lHtr3oliPuKwB9hd005CCCleqcuNCxDyCTC+PjYWpXJMMf+B3Ra7GjOpwbOcg==", "id"=>"12"}
+  [1m[36mBrew Load (0.4ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "brews" WHERE "brews"."id" = ?[0m  [["id", 12]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brews
+Completed 302 Found in 9ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/brews" for 127.0.0.1 at 2018-05-22 16:01:38 -0400
+Processing by BrewsController#index as HTML
+  Rendering brews/index.html.erb within layouts/application
+  [1m[36mBrew Load (0.5ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered brews/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 42ms (Views: 38.3ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/brews/2" for 127.0.0.1 at 2018-05-22 16:01:42 -0400
+Processing by BrewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NYk2BkMB0KbJGwWL0Ovg2z1VrEf1FsikoiUg6vvj0rNJsVbxAraMNNwoOnDJiinlnI2/Jt9HtfVwMsLkQ4RrjA==", "id"=>"2"}
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "brews" WHERE "brews"."id" = ?[0m  [["id", 2]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brews
+Completed 302 Found in 6ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/brews" for 127.0.0.1 at 2018-05-22 16:01:42 -0400
+Processing by BrewsController#index as HTML
+  Rendering brews/index.html.erb within layouts/application
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered brews/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 50ms (Views: 47.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/brews/14" for 127.0.0.1 at 2018-05-22 16:01:45 -0400
+Processing by BrewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+5q47uXY2HH6hrqM9mQ4605VfWtOz633uMrf0VSVAr+HotgZpG+E4++1hXfvBfHV741uCmSe0KZq3T3f7PK7gA==", "id"=>"14"}
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "brews" WHERE "brews"."id" = ?[0m  [["id", 14]]
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brews
+Completed 302 Found in 10ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/brews" for 127.0.0.1 at 2018-05-22 16:01:45 -0400
+Processing by BrewsController#index as HTML
+  Rendering brews/index.html.erb within layouts/application
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered brews/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 36ms (Views: 33.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/brews/strongest" for 127.0.0.1 at 2018-05-22 16:01:52 -0400
+Processing by BrewsController#coolest_action as HTML
+  Rendering brews/coolest_action.html.erb within layouts/application
+  [1m[36mBrew Load (0.4ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" ORDER BY "brews"."strength" DESC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered brews/coolest_action.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 32ms (Views: 28.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/brews/strongest" for 127.0.0.1 at 2018-05-22 16:05:12 -0400
+Processing by BrewsController#coolest_action as HTML
+  Rendering brews/coolest_action.html.erb within layouts/application
+  [1m[36mBrew Load (0.4ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" ORDER BY "brews"."strength" DESC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered brews/coolest_action.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 70ms (Views: 59.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/brews" for 127.0.0.1 at 2018-05-22 16:07:55 -0400
+Processing by BrewsController#index as HTML
+  Rendering brews/index.html.erb within layouts/application
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered brews/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 62ms (Views: 57.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2018-05-22 16:07:56 -0400
+Processing by BrewsController#new as HTML
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 51ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/brews" for 127.0.0.1 at 2018-05-22 16:08:04 -0400
+Processing by BrewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gl9qkUJJ4yUCE7UHLmaPOORw16czVbZhpHujffIglLdP6rmWBLYYyIT1W1hbdBjJo4gRBukt/3QFYiwaCG19xA==", "brew"=>{"blend_name"=>"", "origin"=>"", "notes"=>"", "strength"=>"2"}, "commit"=>"Add"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", ""], ["origin", ""], ["notes", ""], ["strength", 2], ["created_at", "2018-05-22 20:08:04.891863"], ["updated_at", "2018-05-22 20:08:04.891863"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brews/27
+Completed 302 Found in 9ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/brews/27" for 127.0.0.1 at 2018-05-22 16:08:04 -0400
+Processing by BrewsController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  Rendering brews/show.html.erb within layouts/application
+  Rendered brews/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 50ms (Views: 41.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/brews/27/edit" for 127.0.0.1 at 2018-05-22 16:08:20 -0400
+Processing by BrewsController#edit as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  Rendering brews/edit.html.erb within layouts/application
+  Rendered brews/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 56ms (Views: 50.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/brews/27" for 127.0.0.1 at 2018-05-22 16:08:22 -0400
+Processing by BrewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jMYKR4M668YPbM0463dZh+KELq6RRemCqdzW6Jr06x/w/mqwwo23VBpf8sPyFpC5Q1w9z7sUlNN7yzTmIpNSIA==", "id"=>"27"}
+  [1m[36mBrew Load (0.2ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "brews" WHERE "brews"."id" = ?[0m  [["id", 27]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brews
+Completed 302 Found in 10ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/brews" for 127.0.0.1 at 2018-05-22 16:08:22 -0400
+Processing by BrewsController#index as HTML
+  Rendering brews/index.html.erb within layouts/application
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered brews/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 51ms (Views: 45.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2018-05-22 16:08:51 -0400
+Processing by BrewsController#new as HTML
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 96ms (Views: 50.5ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/brews" for 127.0.0.1 at 2018-05-22 16:08:54 -0400
+Processing by BrewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y+cszd4ryebzgGn9oYHaHh4+quQhQn/jwckY7Uj48cE2Uv/KmNQyC3Vmh6LUk03vWcZsRfs6NvZg0JeKsrUYsg==", "brew"=>{"blend_name"=>"", "origin"=>"", "notes"=>"", "strength"=>"2"}, "commit"=>"Add"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+No template found for BrewsController#create, rendering head :no_content
+Completed 204 No Content in 106ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2018-05-22 16:10:56 -0400
+Processing by BrewsController#new as HTML
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 97ms (Views: 54.5ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/brews" for 127.0.0.1 at 2018-05-22 16:11:24 -0400
+Processing by BrewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IXpzVB1gZImbSu9hCfMn6dxK19GZIKp9RCFEVarXO7J0z6BTW5+fZB2sAT584bAYm7IRcENY42jlOMsyUJrSwQ==", "brew"=>{"blend_name"=>"", "origin"=>"origin", "notes"=>"", "strength"=>"2"}, "commit"=>"Add"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 55ms (Views: 25.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/brews" for 127.0.0.1 at 2018-05-22 16:11:51 -0400
+Processing by BrewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KBBZseJ/wAj58ynqWp2L8/yy3lcTvRM0nouFPQzhIp9UKDlGo8icmuzAFhFD/ELNXWrNNjnsbmVMnGcztIaboA==", "brew"=>{"blend_name"=>"", "origin"=>"origin", "notes"=>"", "strength"=>"2"}, "commit"=>"Add"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 35ms (Views: 31.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/brews" for 127.0.0.1 at 2018-05-22 16:11:52 -0400
+Processing by BrewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vj9g3dzW3ZU1HhQ+ZfU1x5XmWTUprwLJebyEngMCa4QqBwAqnWGBByAtK8V8lPz5ND5KVAP+f5irq2aQu2XSuw==", "brew"=>{"blend_name"=>"", "origin"=>"origin", "notes"=>"", "strength"=>"2"}, "commit"=>"Add"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 58ms (Views: 54.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/brews" for 127.0.0.1 at 2018-05-22 16:11:54 -0400
+Processing by BrewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LYD47DNd9izOkee8lEsja6d3ke6XgpP0K09OeSPEletRuJgbcuqqvtui2EeNKupVBq+Cj73T7qX5WKx3m6Ms1A==", "brew"=>{"blend_name"=>"", "origin"=>"origin", "notes"=>"", "strength"=>"2"}, "commit"=>"Add"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 36ms (Views: 32.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/brews" for 127.0.0.1 at 2018-05-22 16:11:57 -0400
+Processing by BrewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5/nhnKLhy1DKA7H+PrNxvzjKs+5FQRMuyP5tgfsbcu6bwYFr41aXwt8wjgUn0riBmRKgj28Qbn8a6Y+PQ3zL0Q==", "brew"=>{"blend_name"=>"", "origin"=>"origin", "notes"=>"", "strength"=>"2"}, "commit"=>"Add"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 32ms (Views: 28.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/brews" for 127.0.0.1 at 2018-05-22 16:12:19 -0400
+Processing by BrewsController#index as HTML
+  Rendering brews/index.html.erb within layouts/application
+  [1m[36mBrew Load (0.5ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered brews/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 42ms (Views: 35.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2018-05-22 16:12:21 -0400
+Processing by BrewsController#new as HTML
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 56ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/brews" for 127.0.0.1 at 2018-05-22 16:12:37 -0400
+Processing by BrewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bUHJ9KX7nzMyRSmy9V54ATwGIqvz9waYglNbqGV+jX449Brz4wRk3rSjx+2ATO/we/7kCimPT40jStTPnzNkDQ==", "brew"=>{"blend_name"=>"", "origin"=>"invalid name````", "notes"=>"", "strength"=>"3"}, "commit"=>"Add"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 37ms (Views: 33.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/brews" for 127.0.0.1 at 2018-05-22 16:13:05 -0400
+Processing by BrewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2DfB0v3rc8WzqvG2NTTIbhweA0/OwrARhovE2/CS9iekD6ElvFwvV6aZzk0sVQFQvcYQLuSTzUBUnCbVSPVPGA==", "brew"=>{"blend_name"=>"woot!", "origin"=>"invalid name````", "notes"=>"", "strength"=>"3"}, "commit"=>"Add"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "brews" ("blend_name", "origin", "notes", "strength", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["blend_name", "woot!"], ["origin", "invalid name````"], ["notes", ""], ["strength", 3], ["created_at", "2018-05-22 20:13:05.885091"], ["updated_at", "2018-05-22 20:13:05.885091"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/brews/28
+Completed 302 Found in 9ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/brews/28" for 127.0.0.1 at 2018-05-22 16:13:05 -0400
+Processing by BrewsController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" WHERE "brews"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  Rendering brews/show.html.erb within layouts/application
+  Rendered brews/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 37ms (Views: 29.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/brews" for 127.0.0.1 at 2018-05-22 16:16:27 -0400
+Processing by BrewsController#index as HTML
+  Rendering brews/index.html.erb within layouts/application
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered brews/index.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 112ms (Views: 98.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2018-05-22 16:16:29 -0400
+Processing by BrewsController#new as HTML
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 67ms (Views: 63.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/brews" for 127.0.0.1 at 2018-05-22 16:16:35 -0400
+Processing by BrewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y6Q2adnNbM+X+3RY9zHk5hhasJjBF7pBRadyLzeKMYA2EeVunzKXIhEdmgeCI3MXX6J2ORtv81Tkvv1IzcfY8w==", "brew"=>{"blend_name"=>"", "origin"=>"", "notes"=>"", "strength"=>""}, "commit"=>"Add"}
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 36ms (Views: 33.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2018-05-22 16:20:21 -0400
+Processing by BrewsController#new as HTML
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 32ms (Views: 18.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/brews" for 127.0.0.1 at 2018-05-22 16:20:48 -0400
+Processing by BrewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"utlz9zPCwawtuLZhj32HGSa3HLTadi9aZYJ4eHEa1GLG4RMAcnWdPjiLiZqWHE4nh28P1fAnUgu3lZp2yX1tXQ==", "brew"=>{"blend_name"=>"new new", "origin"=>"new new ", "notes"=>"new enew", "strength"=>"-1"}, "commit"=>"Add"}
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 55ms (Views: 53.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2018-05-22 16:22:15 -0400
+Processing by BrewsController#new as HTML
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 47ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/brews" for 127.0.0.1 at 2018-05-22 16:22:18 -0400
+Processing by BrewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9tBFKZ9m/d4itjUEpQtAYLlVkWhRh7Dp47kPp2OGDbmK6CXe3tGhTDeFCv+8aoleGI2CCXvWzbgxru2p2+G0hg==", "brew"=>{"blend_name"=>"", "origin"=>"", "notes"=>"", "strength"=>""}, "commit"=>"Add"}
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brews" for 127.0.0.1 at 2018-05-22 16:22:30 -0400
+Processing by BrewsController#index as HTML
+  Rendering brews/index.html.erb within layouts/application
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered brews/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 40ms (Views: 36.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2018-05-22 16:22:31 -0400
+Processing by BrewsController#new as HTML
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 70ms (Views: 63.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/brews" for 127.0.0.1 at 2018-05-22 16:22:32 -0400
+Processing by BrewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kPEElqMtm2KMoh1GxfwAGom3lVdGdxaaxNF8RvYk+G3FRNeR5dJgjwpE8xmw7pfrzk9T9pwPX49lyPMhDGkRHg==", "brew"=>{"blend_name"=>"", "origin"=>"", "notes"=>"", "strength"=>""}, "commit"=>"Add"}
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 40ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2018-05-22 16:23:29 -0400
+Processing by BrewsController#new as HTML
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 34ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/brews" for 127.0.0.1 at 2018-05-22 16:23:30 -0400
+Processing by BrewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qSRf291XqOFllx2EiMHD1Sfd6elSeM5/mr0AYGhrsNzVHD8snOD0c3CkIn+RoArrhgX6iHgpsy5IquJu0AwJ4w==", "brew"=>{"blend_name"=>"", "origin"=>"", "notes"=>"", "strength"=>""}, "commit"=>"Add"}
+  Rendering brews/new.html.erb within layouts/application
+  Rendered brews/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 40ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+

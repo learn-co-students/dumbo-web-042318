@@ -1,0 +1,14 @@
+<h1>Strongest</h1>
+
+<table>
+  <% @brews.each do |brew| %>
+  <tr> <!-- table row -->
+    <td><%= brew.blend_name %></td><!-- table cell -->
+    <td><%= brew.origin %></td>
+    <td><%= brew.notes %></td>
+    <td><%= brew.strength %></td>
+    <td><%= link_to "Edit", edit_brew_path(brew) %></td>
+    <td><%= button_to "Delete", brew_path(brew), method: :delete %></td>
+  </tr>
+  <% end %>
+</table>

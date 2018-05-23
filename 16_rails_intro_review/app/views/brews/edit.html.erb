@@ -1,0 +1,22 @@
+<h1>Update Brew Form</h1>
+
+<%= form_for @brew do |f| %>
+  <%= f.label :blend_name, "Name" %>
+  <%= f.text_field :blend_name %>
+
+  <%= f.label :origin %>
+  <%= f.text_field :origin %>
+
+  <%= f.label :notes %>
+  <%= f.text_area :notes %>
+
+  <%= f.label :strength %>
+  <%= f.number_field :strength, in: 1..5 %>
+
+  <%= f.submit %>
+<% end %>
+
+<%= button_to "Delete", brew_path(@brew), method: :delete %>
+<%#= form_tag brew_path(@brew), method: :delete do %>
+  <%#= submit_tag "Delete" %>
+<%# end %>

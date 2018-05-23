@@ -1,0 +1,24 @@
+<h1>New Brew Form</h1>
+
+<%= form_for @brew do |f| %>
+
+  <%= f.label :blend_name, "Name" %>
+  <% if @brew.errors.messages[:blend_name] %>
+    <%= @brew.blend_name %> <%= @brew.errors.messages[:blend_name].first %>
+  <% end %>
+  <%= f.text_field :blend_name %>
+
+  <%= f.label :origin %>
+  <%= f.text_field :origin %>
+
+  <%= f.label :notes %>
+  <%= f.text_area :notes %>
+
+  <%= f.label :strength %>
+  <% if @brew.errors.messages[:strength] %>
+    <%= @brew.strength %> <%= @brew.errors.messages[:strength].first %>
+  <% end %>
+  <%= f.number_field :strength %>
+
+  <%= f.submit "Add" %>
+<% end %>
