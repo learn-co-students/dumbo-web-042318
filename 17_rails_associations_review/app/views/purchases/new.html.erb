@@ -1,0 +1,21 @@
+<!-- should have a new page to create a new purchase
+  takes in a Customer's name (either new or existing) who is making the purchase
+  takes in purchase information
+  allows the customer to select a pre-existing brew of their choice -->
+
+<%= form_for @purchase do |f| %>
+  <%= f.label :customer_name %>
+  <%= f.text_field :customer_name %>
+
+  <%= f.collection_select :brew_id, @brews, :id, :blend_name %>
+  <!-- association: @purchase.brew_id = brew.id -->
+  <!-- params: {purchase: {brew_id: brew.id}} -->
+
+  <%= f.submit %>
+<% end %>
+
+<!-- <select class="" name="">
+  <option value=""></option>
+  <option value=""></option>
+  <option value=""></option>
+</select> -->
