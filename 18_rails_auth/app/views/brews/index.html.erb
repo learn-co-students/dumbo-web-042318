@@ -1,0 +1,6 @@
+<h1> Coffees </h1>
+<ol>
+<% @brews.each do |brew| %>
+  <li> <%= link_to brew.blend_name, brew_path(brew)%> </li>
+<% end %>
+</ol>

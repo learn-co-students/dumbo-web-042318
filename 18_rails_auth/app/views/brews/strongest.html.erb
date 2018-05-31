@@ -1,0 +1,6 @@
+<h1> Strongest Coffees </h1>
+<ol>
+<% @strongest_brews.each do |brew| %>
+  <li> <%= link_to brew.blend_name, brew_path(brew)%> </li>
+<% end %>
+</ol>
