@@ -1,0 +1,22 @@
+{
+  "chores": [
+    {
+      "title": "laundry",
+      "priority": "heavy",
+      "duration": "1.5 hours",
+      "id": 3
+    },
+    {
+      "title": "laundry",
+      "priority": "heavy",
+      "duration": "1.5 hours",
+      "id": 4
+    },
+    {
+      "title": "test chore",
+      "priority": "heavy duty",
+      "duration": "6 hours",
+      "id": 5
+    }
+  ]
+}
