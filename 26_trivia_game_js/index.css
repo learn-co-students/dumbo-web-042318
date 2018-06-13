@@ -1,0 +1,16 @@
+.correct {
+  background-color: aqua;
+}
+
+.incorrect {
+  background-color: fuchsia;
+}
+
+.disabled {
+  color: #dddddd;
+  pointer-events: none;
+}
+
+body ol#questions li.question li.answer[data-id="3"] {
+  background: gray;
+}
