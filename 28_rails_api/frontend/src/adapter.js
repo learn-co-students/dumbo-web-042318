@@ -10,7 +10,7 @@ class Adapter {
 
   createAnimal(data) {
     return fetch(this.baseURL, {
-      body: JSON.stringify(data),
+      body: JSON.stringify({animal: data}),
       headers: {
         'Content-Type': 'application/json'
       },
