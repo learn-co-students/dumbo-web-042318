@@ -1,18 +1,42 @@
 document.addEventListener('DOMContentLoaded',
-function() {
-  const tbody = document.querySelector('tbody')
-  const form = document.querySelector('form')
+  function() {
+    const tbody = document.querySelector('tbody')
+    const form = document.querySelector('form')
 
-  form.addEventListener('submit', function(e) {
+    const api = new Adapter()
+    api.getAnimals()
+    .then(animals => {
+      animals.forEach(animal => {
+        const a = new Animal(animal)
+        tbody.innerHTML += a.render()
+      })
+    })
+
+    form.addEventListener('submit', handleSumbit)
+
+  function handleSumbit(e) {
     e.preventDefault()
 
-    const data = {
+    const api = new Adapter()
+    api.createAnimal(getFormData())
+    .then( r => {
+      const animal = new Animal(r)
+      tbody.innerHTML += animal.render()
+    }
+    )
+  }
+
+  function getFormData() {
+    return {
       name: document.querySelector('#name').value,
       gender: document.querySelector('#gender').value,
-      species_id: document.querySelector('#species').value
+      species: document.querySelector('#species').value
     }
+  }
 
-    const animal = new Animal(data)
-    tbody.innerHTML += animal.render()
-  })
+  function clearFormData() {
+    document.querySelector('#name').value = ''
+    document.querySelector('#gender').value = ''
+    document.querySelector('#species').value = ''
+  }
 })
