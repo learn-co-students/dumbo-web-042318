@@ -1,0 +1,6 @@
+- Return RESTful responses from a Rails backend
+- Render JSON data from an endpoint
+- Change CORS settings for a Rails API
+- Understand Rails protect_from_forgery
+- Use Rails Serializers to handle nested attributes
+- Use the Rails --api flag
