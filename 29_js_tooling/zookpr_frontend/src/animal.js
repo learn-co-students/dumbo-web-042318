@@ -11,8 +11,10 @@ class Animal {
     <tr>
       <td>${this.name}</td>
       <td>${this.gender}</td>
-      <td>${this.species}</td>
+      <td>cat</td>
     </tr>
     `
   }
 }
+
+export default Animal

@@ -1,3 +1,6 @@
+import Animal from './animal'
+import Adapter from './adapter'
+
 document.addEventListener('DOMContentLoaded',
   function() {
     const tbody = document.querySelector('tbody')
@@ -22,8 +25,8 @@ document.addEventListener('DOMContentLoaded',
     .then( r => {
       const animal = new Animal(r)
       tbody.innerHTML += animal.render()
-    }
-    )
+      clearFormData()
+    })
   }
 
   function getFormData() {
