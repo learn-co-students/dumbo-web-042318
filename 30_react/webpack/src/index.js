@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import List from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const arrayElements = ['marie', 'chris a', 'anum'];
+const someObject = { myKey: 'myValue' };
+
+ReactDOM.render(
+  <List lis={arrayElements} someObject={someObject} />,
+  document.getElementById('root')
+);
+
+// ReactDOM.render(
+//   React.createElement(List, { arrayElements: arrayElements, someObject: someObject }),
+//   document.getElementById('root')
+// );

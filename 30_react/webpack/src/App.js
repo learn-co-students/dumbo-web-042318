@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-class App extends Component {
+class List extends Component {
+  constructor(props) {
+    super(props);
+
+    // debugger;
+  }
   render() {
+    const lis = this.props.lis.map((el) => <li key={el}>{el}</li>);
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <ul>
+        <img
+          width="100px"
+          height="100px"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Collage_of_Nine_Dogs.jpg/520px-Collage_of_Nine_Dogs.jpg"
+        />
+        <li>woot!</li>
+        <li>excited for react</li>
+        <input type="checkbox" />
+        <input type="email" />
+        {lis}
+      </ul>
     );
   }
 }
 
-export default App;
+export default List;

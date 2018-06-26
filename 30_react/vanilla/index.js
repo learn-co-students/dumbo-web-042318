@@ -1,9 +1,19 @@
-// ReactDOM.render(React.createElement('h1'), document.getElementById('app'));
-/* ReactDOM.render(<h1 />, document.getElementById('app')); */
+// const List = React.createElement('ul', {}, [
+// 	React.createElement('li', {}, '1'),
+// 	React.createElement('li', {}, '2'),
+// 	React.createElement('li', {}, '3'),
+// ])
 
-// ReactDOM.render(
-//   React.createElement('h1', {}, 'hello'),
-//   document.getElementById('app')
-// );
-//
-/* ReactDOM.render(<h1>Hello</h1>, document.getElementById('app')); */
+const List = (props) => {
+  const children = props.arrayElements.map((el) => {
+    return React.createElement('li', {}, el);
+  });
+
+  return React.createElement('ul', {}, children /* array of li's */);
+};
+
+const props = {
+  arrayElements: ['daiane', 'abdoul', 'daniel']
+};
+
+ReactDOM.render(List(props), document.getElementById('app'));
