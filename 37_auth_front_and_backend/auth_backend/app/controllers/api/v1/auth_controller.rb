@@ -3,7 +3,8 @@ class Api::V1::AuthController < ApplicationController
   def create
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
-      render json: {username: user.username, id: user.id}, status: 200
+      token = encoded_token(user)
+      render json: {username: user.username, id: user.id, jwt: token}, status: 200
     else
       render json: {error: 'Username or Password Invalid'}, status: 401
     end
