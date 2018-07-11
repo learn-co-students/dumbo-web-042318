@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import {Redirect} from 'react-router-dom'
+
 class LoginForm extends Component {
 
   state = {
@@ -33,6 +35,7 @@ class LoginForm extends Component {
 
   render() {
     const { fields } = this.state;
+    if (!this.props.loggedIn) {
     return (
       <div id='content'>
         <div className="ui form">
@@ -61,8 +64,9 @@ class LoginForm extends Component {
             </button>
           </form>
         </div>
-      </div>
-    );
+      </div>);} else {
+        return <Redirect to='/' />
+      }
   }
 }
 

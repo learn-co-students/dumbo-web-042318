@@ -4,6 +4,9 @@ import Navbar from './components/Navbar'
 import LoginForm from './components/LoginForm'
 import Welcome from './components/Welcome'
 
+import { Route, Switch } from 'react-router-dom';
+
+
 class App extends Component {
 
   state = {
@@ -40,9 +43,8 @@ class App extends Component {
         auth: {
           currentUser: user
         }
-      }, () => {
-        localStorage.setItem('token', user.id)
       })
+    localStorage.setItem('token', user.jwt)
   }
 
   handleLogout = () => {
@@ -56,15 +58,21 @@ class App extends Component {
 
   render() {
     const loggedIn = !!this.state.auth.currentUser.id
+
     return (
       <div className="App">
         <Navbar
           currentUser={this.state.auth.currentUser}
           onLogout={this.handleLogout}
         />
-        {!loggedIn ? <LoginForm
+        <Switch >
+          <Route path='/login' render={(routerProps)=> <LoginForm {...routerProps} onLogin={this.handleLogin} loggedIn={loggedIn} />}/>
+          <Route path='/' render={(routerProps) => <Welcome {...routerProps} loggedIn={loggedIn} /> } />
+        </Switch>
+
+        {/* {!loggedIn ? <LoginForm
           onLogin={this.handleLogin}
-         /> : <Welcome /> }
+         /> : <Welcome /> } */}
       </div>
     );
   }
