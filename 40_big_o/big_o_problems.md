@@ -25,7 +25,7 @@ Return something that tells me where in the magazine I can find all the words fo
 
 
 ## Pair Sum
-Given an array and a number, return all pairs of numbers in the array that sum to that number.
+Given a sorted array and a number, return true if any pairs of numbers in the array that sum to that number, else return false.
 
 
 ## Binary Search Tree
