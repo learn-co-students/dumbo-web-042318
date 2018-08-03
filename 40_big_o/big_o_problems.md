@@ -6,6 +6,7 @@ For each of these problems, consider the Big O and any optimizations.
 
   Remember REACTO - Optimization comes last. First come up with solutions that work, then make them work well.
 
+  ```
   R E A C T O
   e x p o e p
   p a p d s t
@@ -14,6 +15,7 @@ For each of these problems, consider the Big O and any optimizations.
   t l a     i
     e c     z
       h     e
+```
 
 ## Ransom Note Checker
 Given two strings representing your note and a magazine, return a boolean that tells you if you can create the note from the magazine.
@@ -32,7 +34,7 @@ A binary search tree is a node-based binary tree data structure which has the fo
   - The left subtree of a node contains only nodes with values lesser than or equal to the node’s value.
   - The right subtree of a node contains only nodes with values greater than the node’s value.
   - The left and right subtree each must also be a binary search tree.
-
+```
        8
     /     \
    3       10
@@ -40,7 +42,7 @@ A binary search tree is a node-based binary tree data structure which has the fo
  1   6    9   12
     / \      /
    4   7    11
-
+```
 
   1. How might you create a binary search tree class? What information does a binary search tree need to have?
   2. Write a method that determines if a value is in your binary search tree.
